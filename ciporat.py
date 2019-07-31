@@ -292,7 +292,7 @@ while True:
             break
     elif opcion == "4":
         os.system('cls' if os.name == 'nt' else 'clear')
-        seguro = input("Esta función solo está disponible para linux, quieres continuar? (s/n): ")
+        seguro = input("start http://windows.metasploit.com/metasploitframework-latest.msi" if os.name == "nt" else "Esta función solo está disponible para linux, quieres continuar? (s/n): ")
         if seguro == "s":
             os.system("curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall")
         else:
