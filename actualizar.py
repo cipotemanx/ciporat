@@ -3,7 +3,7 @@ import sys
 import time
 
 #sys.stdout.write("\033[1;31m")
-os.system("clear")
+os.system("cls" if os.name == "nt" else "clear")
 cyan = '\e[0;36m'
 green = '\e[0;34m'
 okegreen = '\033[92m'
