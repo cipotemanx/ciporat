@@ -1,3 +1,6 @@
+#No deberías estar leyendo esto.
+#Cualquier cosa que se modifique aqui puede romper el funcionamiento del programa.
+
 import os
 import sys
 import time
@@ -276,7 +279,7 @@ while True:
 
     elif opcion == "3":
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("* Esta herramienta de uso libre está basado en TheFatRat\n")
+        print("* Esta herramienta fue creada por CipoteMant\n")
         print("* El principal motivo de esta herramienta es facilitar el uso de metasploit\n")
         print("* Se ruega no subir los archivos a www.virustotal.com\n")
         print("* Si quieres ayudarme con este proyecto este es mi discord: CipoteMan#3436\n")
