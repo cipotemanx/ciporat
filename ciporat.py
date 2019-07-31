@@ -314,7 +314,7 @@ while True:
         print("Inciando listener...")
         os.system("msfconsole -r listener.rc")
     elif opcion == "6":
-        os.system("python3 actualizar.py")
+        os.system("python actualizar.py" if os.name == "nt" else "python3 actualizar.py")
     elif opcion == "7":
         break
 
