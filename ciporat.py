@@ -48,7 +48,7 @@ while True:
     print("1 - Backdoor con msfvenom")
     print("2 - Backdoor 100% indetectable (Antivirus Bypass) *En desarrollo*")
     print("3 - Información")
-    print("4 - Instalar metasploit (SOLO LINUX)")
+    print("4 - Instalar metasploit")
     print("5 - Abrir listener en metasploit")
     print("6 - Actualizar CipoRat")
     print("7 - Salir\n")
@@ -295,7 +295,7 @@ while True:
         if os.name == "nt":
             os.system("start http://windows.metasploit.com/metasploitframework-latest.msi")
         else:
-            seguro = input("Esta función solo está disponible para linux, quieres continuar? (s/n): ")
+            seguro = input("Metasploit es necesario para que funcione este programa, quieres continuar? (s/n): ")
             if seguro == "s":
                 os.system("curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall")
             else:
