@@ -293,7 +293,7 @@ while True:
     elif opcion == "4":
         os.system('cls' if os.name == 'nt' else 'clear')
         if os.name == "nt":
-            os.system("start http://windows.metasploit.com/metasploitframework-latest.msi")
+            os.system("start https://downloads.metasploit.com/data/releases/metasploit-latest-windows-x64-installer.exe")
         else:
             seguro = input("Metasploit es necesario para que funcione este programa, quieres continuar? (s/n): ")
             if seguro == "s":
