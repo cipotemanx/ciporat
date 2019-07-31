@@ -292,31 +292,34 @@ while True:
             break
     elif opcion == "4":
         os.system('cls' if os.name == 'nt' else 'clear')
-        seguro = input("start http://windows.metasploit.com/metasploitframework-latest.msi" if os.name == "nt" else "Esta función solo está disponible para linux, quieres continuar? (s/n): ")
-        if seguro == "s":
-            os.system("curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall")
+        if os.name == "nt":
+            os.system("start http://windows.metasploit.com/metasploitframework-latest.msi")
         else:
-            continue
-    elif opcion == "5":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        payload = input("Inserte el payload: ")
-        lhost = input("Inserte la ip o -dns (LHOST): ")
-        lport = input("Inserte el puerto (LPORT): ")
-        f = open("listener.rc", "w+")
-        for i in range(1):
-            f.write("use exploit/multi/handler\n")
-            f.write("set payload {}\n".format(payload))
-            f.write("set lhost {}\n".format(lhost))
-            f.write("set lport {}\n".format(lport))
-            f.write("exploit")
-        f.close()
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print("Inciando listener...")
-        os.system("msfconsole -r listener.rc")
-    elif opcion == "6":
-        os.system("python actualizar.py" if os.name == "nt" else "python3 actualizar.py")
-    elif opcion == "7":
-        break
+            seguro = input("Esta función solo está disponible para linux, quieres continuar? (s/n): ")
+            if seguro == "s":
+                os.system("curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall")
+            else:
+                continue
+        elif opcion == "5":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            payload = input("Inserte el payload: ")
+            lhost = input("Inserte la ip o -dns (LHOST): ")
+            lport = input("Inserte el puerto (LPORT): ")
+            f = open("listener.rc", "w+")
+            for i in range(1):
+                f.write("use exploit/multi/handler\n")
+                f.write("set payload {}\n".format(payload))
+                f.write("set lhost {}\n".format(lhost))
+                f.write("set lport {}\n".format(lport))
+                f.write("exploit")
+            f.close()
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("Inciando listener...")
+            os.system("msfconsole -r listener.rc")
+        elif opcion == "6":
+            os.system("python actualizar.py" if os.name == "nt" else "python3 actualizar.py")
+        elif opcion == "7":
+            break
 
-    else:
-        break
+        else:
+            break
