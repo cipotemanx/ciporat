@@ -43,8 +43,8 @@ while True:
     print(r"#           (  _ )_                                         #")
     print(r"#         (_  _(_ ,)                                        #")
     print(r"#############################################################")
-    
-    print('AVISO: SE DETECTA QUE ESTÁS USANDO WINDOWS, ESTA HERRAMIENTA NO ES COMPATIBLE CON TU OS' if os.name == 'nt' else '')
+
+    print('AVISO: SE DETECTA QUE ESTÁS USANDO WINDOWS, ESTA HERRAMIENTA NO ES COMPATIBLE CON TU OS\nAVISO: SE DETECTA QUE ESTÁS USANDO WINDOWS, ESTA HERRAMIENTA NO ES COMPATIBLE CON TU OS' if os.name == 'nt' else '')
     print("Bienvenido a mi herramienta de libre uso.\n")
     print("1 - Backdoor con msfvenom")
     print("2 - Backdoor 100% indetectable (Antivirus Bypass) *En desarrollo*")
