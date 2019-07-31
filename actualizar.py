@@ -41,13 +41,13 @@ print(r"#  ◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤...                     
 print(r"#                                                           #")
 print("#############################################################\n")
 
-print("Bienvenido a el sistema de actualización.\n")
+print("Bienvenido a el sistema de actualización de CipoRat.\n")
 opcion= input("Quiere continuar con la actualización? (s/n): ")
 if opcion == "s":
-    os.system("rm -rf ciporat")
-    os.system("git clone https://github.com/cipotemanx/ciporat.git")
+    os.system("rm ciporat.py")
+    os.system("wget https://raw.githubusercontent.com/cipotemanx/ciporat/master/ciporat.py")
     print("\nTerminando actualización")
-    time.sleep(6.5)
+    time.sleep(5)
 
 else:
     os.system("python3 ciporat.py")
