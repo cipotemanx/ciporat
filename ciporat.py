@@ -279,7 +279,7 @@ while True:
 
     elif opcion == "3":
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("* Esta herramienta fue creada por CipoteMant\n")
+        print("* Esta herramienta fue creada por CipoteMan\n")
         print("* El principal motivo de esta herramienta es facilitar el uso de metasploit\n")
         print("* Se ruega no subir los archivos a www.virustotal.com\n")
         print("* Si quieres ayudarme con este proyecto este es mi discord: CipoteMan#3436\n")
