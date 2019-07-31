@@ -4,6 +4,8 @@ import time
 
 #sys.stdout.write("\033[1;31m")
 while True:
+    os.system("rm actualizar.py")
+    os.system("wget https://raw.githubusercontent.com/cipotemanx/ciporat/master/actualizar.py")
     os.system('cls' if os.name == 'nt' else 'clear')
     cyan = '\e[0;36m'
     green = '\e[0;34m'
