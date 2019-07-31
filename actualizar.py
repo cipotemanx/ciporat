@@ -48,6 +48,7 @@ if opcion == "s":
     os.system("wget https://raw.githubusercontent.com/cipotemanx/ciporat/master/ciporat.py")
     print("\nTerminando actualización")
     time.sleep(3.5)
+    exit()
 
 else:
     os.system("python3 ciporat.py")
