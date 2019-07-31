@@ -42,8 +42,9 @@ while True:
     print(r"#             _ _                                           #")
     print(r"#           (  _ )_                                         #")
     print(r"#         (_  _(_ ,)                                        #")
-    print("#############################################################\n")
-
+    print(r"#############################################################")
+    
+    print('AVISO: SE DETECTA QUE ESTÁS USANDO WINDOWS, ESTA HERRAMIENTA NO ES COMPATIBLE CON TU OS' if os.name == 'nt' else '')
     print("Bienvenido a mi herramienta de libre uso.\n")
     print("1 - Backdoor con msfvenom")
     print("2 - Backdoor 100% indetectable (Antivirus Bypass) *En desarrollo*")
@@ -293,7 +294,11 @@ while True:
     elif opcion == "4":
         os.system('cls' if os.name == 'nt' else 'clear')
         if os.name == "nt":
+            print("Nuestro sistema detecta que estás usando Windows.")
+            print("Este Framework no está diseñado para windows pero podemos ayudarte a añadirle compatibilidad.")
+            print("Para añadirle compatibilidad se necesita descargar los siguientes archivos: ")
             os.system("start https://downloads.metasploit.com/data/releases/metasploit-latest-windows-x64-installer.exe")
+            os.system("start https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.3-1/rubyinstaller-devkit-2.6.3-1-x64.exe")
         else:
             seguro = input("Metasploit es necesario para que funcione este programa, quieres continuar? (s/n): ")
             if seguro == "s":
@@ -318,6 +323,7 @@ while True:
         os.system("msfconsole -r listener.rc")
     elif opcion == "6":
         os.system("python actualizar.py" if os.name == "nt" else "python3 actualizar.py")
+
     elif opcion == "7":
         break
 
