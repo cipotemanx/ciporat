@@ -82,7 +82,7 @@ while True:
                 f.write("set lport {}\n".format(lport))
                 f.write("exploit")
             f.close()
-            if salir == "s":
+            if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
                 continue
@@ -104,7 +104,7 @@ while True:
                 f.write("set lport {}\n".format(lport))
                 f.write("exploit")
             f.close()
-            if salir == "s":
+            if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
                 continue
@@ -126,7 +126,7 @@ while True:
                 f.write("set lport {}\n".format(lport))
                 f.write("exploit")
             f.close()
-            if salir == "s":
+            if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
                 continue
@@ -148,7 +148,7 @@ while True:
                 f.write("set lport {}\n".format(lport))
                 f.write("exploit")
             f.close()
-            if salir == "s":
+            if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
                 continue
@@ -169,7 +169,7 @@ while True:
                 f.write("set lport {}\n".format(lport))
                 f.write("exploit")
             f.close()
-            if salir == "s":
+            if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
                 continue
@@ -190,7 +190,7 @@ while True:
                 f.write("set lport {}\n".format(lport))
                 f.write("exploit")
             f.close()
-            if salir == "s":
+            if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
                 continue
@@ -212,7 +212,7 @@ while True:
                 f.write("set lport {}\n".format(lport))
                 f.write("exploit")
             f.close()
-            if salir == "s":
+            if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
                 continue
@@ -301,7 +301,7 @@ while True:
             os.system("start https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.3-1/rubyinstaller-devkit-2.6.3-1-x64.exe")
         else:
             seguro = input("Metasploit es necesario para que funcione este programa, quieres continuar? (s/n): ")
-            if seguro == "s":
+            if seguro == "s" or "S":
                 os.system("curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall")
             else:
                 continue

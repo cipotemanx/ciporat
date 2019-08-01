@@ -43,7 +43,7 @@ print("#############################################################\n")
 
 print("Bienvenido a el sistema de actualización de CipoRat.\n")
 opcion= input("Quiere continuar con la actualización? (s/n): ")
-if opcion == "s":
+if opcion == "s" or "S":
     os.system("" if os.name == "nt" else "rm ciporat.py")
     os.system("start https://github.com/cipotemanx/ciporat/archive/master.zip" if os.name == "nt" else "wget https://raw.githubusercontent.com/cipotemanx/ciporat/master/ciporat.py")
     print("\nAbriendo página de descarga.." if os.name == "nt" else "\nTerminando actualización")
