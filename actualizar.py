@@ -47,7 +47,7 @@ if opcion == "s" or "S":
     os.system("" if os.name == "nt" else "rm ciporat.py")
     os.system("start https://github.com/cipotemanx/ciporat/archive/master.zip" if os.name == "nt" else "wget https://raw.githubusercontent.com/cipotemanx/ciporat/master/ciporat.py")
     print("\nAbriendo página de descarga.." if os.name == "nt" else "\nTerminando actualización")
-    time.sleep(3.5)
+    time.sleep(3)
 
 else:
     os.system("python ciporat.py" if os.name == "nt" else "python3 ciporat.py")
