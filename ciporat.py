@@ -55,7 +55,7 @@ while True:
     print("7 - Salir\n")
     opcion= input("Selecciona una opción: ")
     if opcion == "1":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("\n1 - Backdoor-Windows con meterpreter (reverse_tcp) *Recomendado*")
         print("2 - Backdoor-Windows con meterpreter (reverse_https)")
         print("3 - Backdoor-Linux con meterpreter (reverse_tcp)")
