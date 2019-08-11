@@ -438,9 +438,9 @@ def code3():
 ## ESTE ES EL INICIO DEL SCRIPT ##
 
 if os.name == 'nt':
-    print(Fore.RED+"AVISO ESTE SCRIPT NO ES COMPATIBLE CON WINDOWS, PULSE ENTER PARA CONTINUAR")
-    input()
-    time.sleep(3)
-    menu()
+    print(Fore.RED+"AVISO ESTE SCRIPT NO ES COMPATIBLE CON WINDOWS")
+    print("SE EJECUTARÁ AUTOMÁTICAMENTE EL 'CIPORATNT', HECHO PARA WINDOWS")
+    time.sleep(2.6)
+    os.system("python3 ciporatnt.py")
 else:
     menu()
