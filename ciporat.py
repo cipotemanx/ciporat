@@ -141,7 +141,7 @@ def funcion3():
     print("* El principal motivo de esta herramienta es facilitar el uso de metasploit\n")
     print("* Se ruega no subir los archivos a www.virustotal.com\n")
     print("* Si quieres ayudarme con este proyecto este es mi discord: CipoteMan#3436\n")
-    print("* Espero que te sirva de utilidad :D\n")
+    print("* Espero que le sirva de utilidad :D\n")
     print("")
     variable = input("Desea volver al menu principal? (s/n): ")
     if variable == "s":
