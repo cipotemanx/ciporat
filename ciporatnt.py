@@ -225,7 +225,7 @@ def opcion1():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("console -r meta.rc")
+        os.system(r"cd C:\metasploit && console -r meta.rc")
     else:
         menu()
 
