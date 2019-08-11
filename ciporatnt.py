@@ -175,7 +175,7 @@ def funcion5():
     payload = input("Inserte el payload: ")
     lhost = input("Inserte la ip o -dns (LHOST): ")
     lport = input("Inserte el puerto (LPORT): ")
-    f = open("listener.rc", "w+")
+    f = open(r"cd C:\metasploit\listener.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
         f.write("set payload {}\n".format(payload))
@@ -185,7 +185,7 @@ def funcion5():
         f.close()
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Inciando listener...")
-    os.system("msfconsole -r listener.rc")
+    os.system(r"cd C:\metasploit && console -r listener.rc")
 
 def funcion6():
 
@@ -249,7 +249,7 @@ def opcion2():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("console -r meta.rc")
+        os.system(r"cd C:\metasploit && console -r meta.rc")
     else:
         menu()
 
@@ -273,7 +273,7 @@ def opcion3():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("console -r meta.rc")
+        os.system(r"cd C:\metasploit && console -r meta.rc")
     else:
         menu()
 
@@ -297,7 +297,7 @@ def opcion4():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("console -r meta.rc")
+        os.system(r"cd C:\metasploit && console -r meta.rc")
     else:
         menu()
 
@@ -321,7 +321,7 @@ def opcion5():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("console -r meta.rc")
+        os.system(r"cd C:\metasploit && console -r meta.rc")
     else:
         menu()
 
@@ -345,7 +345,7 @@ def opcion6():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("console -r meta.rc")
+        os.system(r"cd C:\metasploit && console -r meta.rc")
     else:
         menu()
 
@@ -369,7 +369,7 @@ def opcion7():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("console -r meta.rc")
+        os.system(r"cd C:\metasploit && console -r meta.rc")
     else:
         menu()
 
@@ -391,7 +391,7 @@ def code1():
         f.close()
     print("\nGenerando código...\n")
     time.sleep(5)
-    os.system("console -r meta.rc")
+    os.system(r"cd C:\metasploit && console -r meta.rc")
 
 
 def code2():
@@ -412,7 +412,7 @@ def code2():
         f.close()
     print("\nGenerando código...\n")
     time.sleep(5)
-    os.system("console -r meta.rc")
+    os.system(r"cd C:\metasploit && console -r meta.rc")
 
 
 def code3():
@@ -433,7 +433,7 @@ def code3():
         f.close()
     print("\nGenerando código...\n")
     time.sleep(5)
-    os.system("console -r meta.rc")
+    os.system(r"cd C:\metasploit && console -r meta.rc")
 
 if os.name == 'nt':
     menu()
