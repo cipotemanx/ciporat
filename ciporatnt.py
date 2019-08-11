@@ -5,7 +5,7 @@ import os
 import socket
 import time
 import colorama
-from colorama import Fore, Back, Style
+#from colorama import Fore, Back, Style
 
 ##Declaraciones de Funciones ##
 
@@ -15,7 +15,7 @@ def menu():
 
     clear()
 
-    print(Fore.WHITE+r"""
+    print(r"""
         #############################################################
         #                  -=\\`\\                                  #
         #              |\\ ____\\_\\__                              #
@@ -73,7 +73,7 @@ def menu():
         exit()
 
     else:
-        print(Fore.RED+"Esa opción no existe, pulse ENTER para continuar")
+        print("Esa opción no existe, pulse ENTER para continuar")
         input()
         menu()
 
@@ -109,7 +109,7 @@ def funcion1():
     if msfvenom == 8:
         menu()
     else:
-        print(Fore.RED+"Esa opción no existe, pulse ENTER para continuar")
+        print("Esa opción no existe, pulse ENTER para continuar")
         input()
         funcion1()
 
@@ -188,7 +188,7 @@ def funcion5():
 
 def funcion6():
 
-    os.system("python3 actualizar.py" if os.name == "nt" else "python3 actualizar.py")
+    os.system("python actualizar.py" if os.name == "nt" else "python3 actualizar.py")
 
 def funcion7():
 
@@ -388,7 +388,7 @@ def code1():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    print("\nGenerando código...\n")
+    print("Generando código...\n")
     time.sleep(5)
     os.system(r"cd C:\metasploit && console -r meta.rc")
 
@@ -438,7 +438,7 @@ if os.name == 'nt':
     menu()
 else:
     clear()
-    print(Fore.RED+"AVISO: ESTA SCRIPT ESTÁ HECHA PARA WINDOWS")
+    print("AVISO: ESTA SCRIPT ESTÁ HECHA PARA WINDOWS")
     print("SE EJECUTARÁ AUTOMÁTICAMENTE EL 'CIPORAT', HECHO PARA LINUX")
     time.sleep(2.6)
     os.system("python3 ciporat.py")

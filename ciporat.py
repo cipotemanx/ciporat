@@ -5,7 +5,7 @@ import os
 import socket
 import time
 import colorama
-from colorama import Fore, Back, Style
+#from colorama import Fore, Back, Style
 
 ##Declaraciones de Funciones ##
 
@@ -15,7 +15,7 @@ def menu():
 
     clear()
 
-    print(Fore.WHITE+r"""
+    print(r"""
         #############################################################
         #                  -=\\`\\                                  #
         #              |\\ ____\\_\\__                              #
@@ -73,7 +73,7 @@ def menu():
         exit()
 
     else:
-        print(Fore.RED+"Esa opción no existe, pulse ENTER para continuar")
+        print("Esa opción no existe, pulse ENTER para continuar")
         input()
         menu()
 
@@ -109,7 +109,7 @@ def funcion1():
     if msfvenom == 8:
         menu()
     else:
-        print(Fore.RED+"Esa opción no existe, pulse ENTER para continuar")
+        print("Esa opción no existe, pulse ENTER para continuar")
         input()
         funcion1()
 
@@ -438,9 +438,9 @@ def code3():
 ## ESTE ES EL INICIO DEL SCRIPT ##
 
 if os.name == 'nt':
-    print(Fore.RED+"AVISO ESTE SCRIPT NO ES COMPATIBLE CON WINDOWS")
+    print("AVISO ESTE SCRIPT NO ES COMPATIBLE CON WINDOWS")
     print("SE EJECUTARÁ AUTOMÁTICAMENTE EL 'CIPORATNT', HECHO PARA WINDOWS")
     time.sleep(2.6)
-    os.system("python3 ciporatnt.py")
+    os.system("python ciporatnt.py")
 else:
     menu()
