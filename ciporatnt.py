@@ -225,7 +225,7 @@ def opcion1():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
+        os.system("console -r meta.rc")
     else:
         menu()
 
@@ -249,7 +249,7 @@ def opcion2():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
+        os.system("console -r meta.rc")
     else:
         menu()
 
@@ -273,7 +273,7 @@ def opcion3():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
+        os.system("console -r meta.rc")
     else:
         menu()
 
@@ -297,7 +297,7 @@ def opcion4():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
+        os.system("console -r meta.rc")
     else:
         menu()
 
@@ -321,7 +321,7 @@ def opcion5():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
+        os.system("console -r meta.rc")
     else:
         menu()
 
@@ -345,7 +345,7 @@ def opcion6():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
+        os.system("console -r meta.rc")
     else:
         menu()
 
@@ -369,7 +369,7 @@ def opcion7():
         f.write("exploit")
         f.close()
     if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
+        os.system("console -r meta.rc")
     else:
         menu()
 
@@ -391,7 +391,7 @@ def code1():
         f.close()
     print("\nGenerando código...\n")
     time.sleep(5)
-    os.system("msfconsole -r meta.rc")
+    os.system("console -r meta.rc")
 
 
 def code2():
@@ -412,7 +412,7 @@ def code2():
         f.close()
     print("\nGenerando código...\n")
     time.sleep(5)
-    os.system("msfconsole -r meta.rc")
+    os.system("console -r meta.rc")
 
 
 def code3():
@@ -433,7 +433,7 @@ def code3():
         f.close()
     print("\nGenerando código...\n")
     time.sleep(5)
-    os.system("msfconsole -r meta.rc")
+    os.system("console -r meta.rc")
 
 if os.name == 'nt':
     menu()
