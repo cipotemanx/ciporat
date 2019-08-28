@@ -1,10 +1,10 @@
 #Coding: UTF-8
 #@@Thanks for your help Null@@
-import socket, time, sys, os
+import socket, time, sys, os, colorama, dns, dns.resolver
 
 sys.path.insert(1, 'modulos')
 from dos import *
-#from colorama import Fore, Back, Style
+from colorama import Fore, Back, Style
 
 ##Declaraciones de Funciones ##
 
@@ -50,8 +50,9 @@ def menu():
     print("4 - Instalar metasploit")
     print("5 - Abrir listener en metasploit")
     print("6 - Actualizar CipoRat")
-    print("7 - Ataque DoS (Mediante el protocolo UDP)")
-    print("8 - Salir\n")
+    print("7 - DNS Resolver")
+    print("8 - Ataque DoS (Mediante el protocolo UDP)")
+    print("9 - Salir\n")
 
     opcion= int(input("Selecciona una opción: "))
     if opcion == 1:
@@ -69,6 +70,8 @@ def menu():
     if opcion == 7:
         funcion7()
     if opcion == 8:
+        funcion8()
+    if opcion == 9:
         exit()
 
     else:
@@ -139,7 +142,7 @@ def funcion3():
     print("* Esta herramienta fue creada por CipoteMan\n")
     print("* El principal motivo de esta herramienta es facilitar el uso de metasploit\n")
     print("* Se ruega no subir los archivos a www.virustotal.com\n")
-    print("* Si quieres ayudarme con este proyecto este es mi discord: CipoteMan#3436\n")
+    print("* Si quieres ayudarme con este proyecto este es mi discord: CipoteMan#8457\n")
     print("* Espero que le sirva de utilidad :D\n")
     print("")
     variable = input("Desea volver al menu principal? (s/n): ")
@@ -157,7 +160,6 @@ def funcion4():
         print("Este Framework no está diseñado para windows pero podemos ayudarte a añadirle compatibilidad.")
         print("Para añadirle compatibilidad se necesita descargar los siguientes archivos: ")
         os.system("start https://downloads.metasploit.com/data/releases/metasploit-latest-windows-x64-installer.exe")
-        os.system("start https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.3-1/rubyinstaller-devkit-2.6.3-1-x64.exe")
     else:
         seguro = input("Metasploit es necesario para que funcione este programa, quieres continuar? (s/n): ")
         if seguro == "s" or "S":
@@ -190,6 +192,12 @@ def funcion6():
     os.system("python actualizar.py" if os.name == "nt" else "python3 actualizar.py")
 
 def funcion7():
+    clear()
+    host = input("Escribe el host a resolver: ")
+    answerA=(dns.resolver.query(host,'A'.format(host)))
+    print(answerA.response)
+
+def funcion8():
 
     clear()
     dos.udp()
@@ -201,7 +209,7 @@ def funcion7():
     #    dos.udp()
     #elif (opcion == "2"):
     #    dos.tcp()
-    
+
 def opcion1():
 
     clear()
