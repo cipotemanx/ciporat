@@ -6,18 +6,18 @@ Framework basada en metasploit y otro tipo de herramientas variadas para facilit
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+Mira los **Pre-requisitos** para conocer como desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
 
-_Es importante instalar los módulos para ejecutar corréctamente la script sin que de errores:_
+_Es importante instalar los módulos para ejecutar corréctamente la script sin que te de errores:_
 
 1º Paso: _Abrir la terminal y acceder a la carpeta con los contenidos_
 ```
 cd ciporat-master
 ```
-2º Paso: _Instalar los requisitos para evitar futuros errores y ejecutar la script.
+2º Paso: _Instalar los requisitos para evitar futuros errores y ejecutar la script._
 ```
 pip3 install -r requirements.txt
 ```
