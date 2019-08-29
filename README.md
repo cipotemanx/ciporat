@@ -29,6 +29,7 @@ Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) 
 ## Versionado e Info 📌
 
 Esta script requiere el uso de Python3, no se puede utilizar una versión anterior.
+
 Es muy importante saber que esta script tiene problemas de rendimiento en el uso de metasploit con windows, por lo tanto si notas un largo periodo de espera al crear los exploits o al abrir el listener de metasploit es normal, ten paciencia.
 
 ## Autores ✒️
