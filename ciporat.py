@@ -2,8 +2,8 @@
 #@@Thanks for your help Null@@
 import socket, time, sys, os, colorama, dns, dns.resolver
 
-sys.path.insert(1, 'modulos')
-from dos import *
+#sys.path.insert(1, 'modulos')
+from modules.dos import *
 from colorama import Fore, Back, Style
 
 ##Declaraciones de Funciones ##
