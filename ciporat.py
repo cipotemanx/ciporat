@@ -3,7 +3,7 @@
 import socket, time, sys, os, colorama, dns, dns.resolver
 
 #sys.path.insert(1, 'modulos')
-from modules.dos import *
+from modulos.dos import *
 from colorama import Fore, Back, Style
 
 ##Declaraciones de Funciones ##
