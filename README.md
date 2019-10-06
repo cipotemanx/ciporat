@@ -37,7 +37,7 @@ Es muy importante saber que esta script tiene problemas de rendimiento en el uso
 _Si quieres aparecer aqui puedes ayudarme con mi proyecto agregándome a discord: CipoteMan#8457_
 
 * **CipoteMan** - *Fundador/Creador* - (https://github.com/cipotemanx)
-* **Puesto Libre** - *Puesto Libre* - (https://github.com/puestolibre)
+* **Null** - *Cooperador/Participante* - (https://github.com/itsme10)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
 
