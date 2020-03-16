@@ -1,4 +1,5 @@
-#Coding: UTF-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*
 #@@Thanks for your help Null@@
 import socket, time, sys, os, colorama, dns, dns.resolver
 
