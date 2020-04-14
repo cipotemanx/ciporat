@@ -1,6 +1,9 @@
 # CipoRat
 
 Framework basada en metasploit y otro tipo de herramientas variadas para facilitar su uso.
+ciporat.py está creado para linux.
+ciporatascii.py es el mismo, pero en formato unicode.
+ciporatnt está preparado para Windows.
 
 ## Comenzando 🚀
 
