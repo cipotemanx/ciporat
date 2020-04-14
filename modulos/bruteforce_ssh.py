@@ -21,7 +21,7 @@ def main():
         con = s.login(ssh.ip, ssh.usuario, contra[ssh.intento])
 
         if con:
-            print("Contraseña encontrada -> {}".format(contra[ssh.intento]))
+            print("Contrasena encontrada -> {}".format(contra[ssh.intento]))
             print("Te has conectado a {}@{}\n".format(ssh.usuario, ssh.ip))
             f.close()
             s.logout()
@@ -29,7 +29,7 @@ def main():
             return con_establecida()
     except Exception:
         ssh.intento = ssh.intento + 1
-        print("Contraseña incorrecta -> ", contra[ssh.intento])
+        print("Contrasena incorrecta -> ", contra[ssh.intento])
         f.close()
         s.close()
         time.sleep(0.3)
