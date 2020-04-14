@@ -29,7 +29,7 @@ def menu():
     print("9 - Bruteforce (SSH) *BETA*")
     print("10 - Salir\n")
 
-    opcion= int(input("Selecciona una opcion:"))
+    opcion= int(input("Selecciona una opcion: "))
     if opcion == 1:
         funcion1()
     if opcion == 2:
