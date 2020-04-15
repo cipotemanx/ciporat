@@ -211,7 +211,7 @@ def funcion9():
 
     def main():
         s = pxssh.pxssh()
-        with open("passwords.txt","r") as f:
+        with open("passwords.txt","r", encoding="utf-8") as f:
             global contra
             contra = f.readlines()
         try:
